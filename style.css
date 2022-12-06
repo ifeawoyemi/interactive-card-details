@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --clr-LinearGradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+    --clr-Red: hsl(0, 100%, 66%);
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-LightGrayishViolet: hsl(270, 3%, 87%);
+    --clr-DarkGrayishViolet: hsl(279, 6%, 55%);
+    --clr-VeryDarkViolet: hsl(278, 68%, 11%);
+
+    --ff-base: 'Space Grotesk', sans-serif;
+    --fw-base: 500;
+
+    --br-base: .5rem;
+}
+
+
+/* 1. Use a more-intuitive box-sizing model. */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* 2. Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. Allow percentage-based heights in the application */
+html,
+body {
+    height: 100%;
+}
+
+
+/* Typographic tweaks! */
+/* 4. Add accessible line-height */
+/* 5. Improve text rendering */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* 7. Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Create a root stacking context */
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* General Styling */
+body {
+    font-family: var(--ff-base);
+    font-size: 1rem;
+    font-weight: var(--fw-base);
+    background-color: var(--clr-White);
+}
+
+.main__flex {
+    min-width: 375px;
+}
+
+.cards__container__flex {
+    --w-cards-mb: 280px;
+
+    color: var(--clr-White);
+    position: relative;
+}
+
+.cards__container__flex picture {
+    width: 100%;
+    height: 230px;
+}
+
+.cards__container__flex picture .bg__main__mobile {
+    width: 100%;
+    height: 100%;
+}
+
+.card__front__container,
+.card__back__container {
+    width: var(--w-cards-mb);
+}
+
+.card__front__container {
+    position: absolute;
+    top: 117px;
+    left: 16px;
+    z-index: 3;
+    box-shadow: 0 2rem 2rem 0 rgba(0, 0, 0, .1);
+}
+
+.card__logos {
+    width: 58px;
+    position: absolute;
+    top: 16px;
+    left: 25px;
+}
+
+.cardNumber__container {
+    font-size: 1.08rem;
+    letter-spacing: .12rem;
+    position: absolute;
+    top: 80px;
+    left: 25px;
+}
+
+#p__cardholder__name {
+    font-size: .6rem;
+    letter-spacing: .1rem;
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+}
+
+#p__exp__month {
+    font-size: .6rem;
+    letter-spacing: .1rem;
+    position: absolute;
+    bottom: 20px;
+    right: 42px;
+}
+
+#p__exp__year {
+    font-size: .6rem;
+    letter-spacing: .1rem;
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+}
+
+.card__back__container {
+    position: absolute;
+    top: 30px;
+    right: 12px;
+    z-index: 2;
+}
+
+#p__cvc__number {
+    font-size: .72rem;
+    position: absolute;
+    top: 67px;
+    right: 36px;
+    letter-spacing: .12rem;
+}
+
+.form__input__container {
+    --p-input: .5rem;
+
+    margin-block: 5rem;
+    margin-inline: 1.5rem;
+    padding-block: 0 2rem;
+}
+
+.form__input__container p {
+    width: 100%;
+    font-size: .9rem;
+    display: block;
+    color: var(--clr-Red);
+    display: none;
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+input {
+    padding: var(--p-input);
+    border: 1px solid var(--clr-LightGrayishViolet);
+    border-radius: var(--br-base);
+    display: block;
+    cursor: pointer;
+}
+
+label {
+    font-size: .82rem;
+    letter-spacing: .1rem;
+}
+
+::placeholder {
+    letter-spacing: .1rem;
+    color: var(--clr-LightGrayishViolet);
+}
+
+.cardholder__name__input__container,
+.card__number__input__container {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.card__number__input__container {
+    position: relative;
+}
+
+.card__number__input__container p {
+    width: max-content;
+    position: absolute;
+    bottom: -21px;
+}
+
+.exp__date__cvc__container__flex {
+    margin-block: 1rem 0;
+    display: flex;
+    gap: .5rem;
+}
+
+.exp__date__input__container {
+    position: relative;
+}
+
+.exp__date__input__container p {
+    width: max-content;
+    position: absolute;
+}
+
+.exp__date__input__container input {
+    width: 75px;
+}
+
+.exp__year__input__container input {
+    width: 70px;
+}
+
+.cvc__container {
+    width: 100%;
+}
+
+.cvc__container input {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+    margin-block: .558rem;
+    padding: .82rem;
+    border: none;
+    background-color: var(--clr-VeryDarkViolet);
+    color: var(--clr-White);
+    border-radius: var(--br-base);
+    cursor: pointer;
+}
+
+.complete__state__container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.complete__state__container img {
+    width: 60px;
+}
+
+.complete__state__container .thank__you {
+    margin-block: 2rem;
+}
+
+.complete__state__container .thank__you h1 {
+    font-weight: var(--fw-base);
+    margin-block: 0 .5rem;
+    letter-spacing: .226rem;
+}
+
+.complete__state__container p {
+    color: var(--clr-DarkGrayishViolet);
+    display: unset;
+}
+
+.complete__state__container .btn__continue {
+    width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+    .cards__container__flex {
+        --w-cards-mb: 400px;
+    }
+
+    .cards__container__flex picture {
+        height: 296px;
+    }
+
+    .card__front__container {
+        top: 154px;
+    }
+
+    .card__logos {
+        width: 70px;
+        top: 26px;
+        left: 30px;
+    }
+
+    .cardNumber__container {
+        font-size: 1.52rem;
+        letter-spacing: .22rem;
+        top: 100px;
+        left: 30px;
+    }
+
+    #cardholder__name {
+        font-size: .88rem;
+        letter-spacing: .12rem;
+        left: 30px;
+        bottom: 26px;
+    }
+
+    #exp__date {
+        font-size: .88rem;
+        bottom: 26px;
+        right: 30px;
+    }
+
+    .card__back__container {
+        top: 34px;
+        right: 18px;
+    }
+
+    #cvc__number {
+        font-size: .92rem;
+        top: 96px;
+        right: 52px;
+    }
+
+    .form__input__container {
+        --p-input: .82rem;
+
+        margin-block: 8rem;
+    }
+
+    form {
+        gap: 1.6rem;
+    }
+
+    label {
+        font-size: 1rem;
+        letter-spacing: .12rem;
+    }
+
+    ::placeholder {
+        font-size: 1.06rem;
+    }
+
+    .exp__date__input__container input {
+        width: 100px;
+    }
+
+    .exp__year__input__container input {
+        width: 90px;
+    }
+
+    button {
+        font-size: 1.2rem;
+        letter-spacing: .04rem;
+        margin-block: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media only screen and (min-width: 790px) {
+    form {
+        display: grid;
+    }
+
+    .cardholder__name__input__container {
+        grid-column: 1;
+    }
+
+    .card__number__input__container {
+        grid-column: 2;
+    }
+
+    .exp__date__cvc__container__flex {
+        grid-column: 1 / span 2;
+    }
+
+    button {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .main__flex {
+        display: flex;
+        align-items: center;
+    }
+
+    .cards__container__flex picture {
+        width: 400px;
+        height: 100vh;
+    }
+
+    .card__front__container {
+        top: 14%;
+        left: 10%;
+    }
+
+    .card__back__container {
+        top: 52%;
+        left: 16%;
+    }
+
+    .form__input__container {
+        margin-block: 0;
+        margin-inline: 7rem 0;
+        padding-block: 0;
+    }
+
+    .cardholder__name__input__container {
+        grid-column: 1 / span 4;
+    }
+
+    .card__number__input__container {
+        grid-column: 1 / span 4;
+    }
+
+    .exp__date__cvc__container__flex {
+        grid-column: 1 / span 4;
+    }
+
+    button {
+        grid-column: 1 / span 4;
+    }
+
+    .complete__state__container {
+        width: 440px;
+        margin-inline: 1rem 0;
+    }
+
+    .complete__state__container img {
+        width: 70px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .cards__container__flex picture {
+        width: 483px;
+    }
+
+    .card__front__container {
+        left: 26%;
+    }
+
+    .card__back__container {
+        left: 34%;
+    }
+
+    .form__input__container {
+        width: 440px;
+        margin-inline: 10rem 0;
+    }
+
+    .complete__state__container {
+        margin-inline: 2rem 0;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .card__front__container {
+        left: 36%;
+    }
+
+    .card__back__container {
+        left: 44%;
+    }
+
+    .form__input__container {
+        margin-inline: 14rem 0;
+    }
+}
