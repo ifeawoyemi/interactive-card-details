@@ -1,16 +1,12 @@
-// Select the form from the DOM
 const form = document.querySelector(".form__container");
 
-// Select the paragraph of identity card front from the DOM
 const pCardNumber = document.getElementById("p__card__number");
 const pCardholderName = document.getElementById("p__cardholder__name");
 const pExpMonth = document.getElementById("p__exp__month");
 const pExpYear = document.getElementById("p__exp__year");
 
-// Select the paragraph of identity card back from the DOM
 const pCvcNumber = document.getElementById("p__cvc__number");
 
-// Select the input cardholder name and the error message from the DOM
 const inputCardholderName = document.getElementById("input__cardholder__name");
 const msgCardholderEmpty = document.getElementById(
   "cardholder__name__empty__msg"
@@ -19,7 +15,6 @@ const msgCardholderNameWrongFormat = document.getElementById(
   "cardholder__name__wrong__format__msg"
 );
 
-// Select the input card number from the DOM
 const inputCardNumber = document.getElementById("input__card__number");
 const msgCardNumberEmpty = document.getElementById(
   "card__number__empty__error__msg"
@@ -28,7 +23,6 @@ const msgWrongFormatCardNumber = document.getElementById(
   "card__number__error__msg"
 );
 
-// Select the input expired month of the card from the DOM
 const inputExpMonth = document.getElementById("input__exp__month");
 const msgExpMonthEmpty = document.getElementById("exp__month__empty__msg");
 const msgGtTotalMonth = document.getElementById("gt__total__month__msg");
